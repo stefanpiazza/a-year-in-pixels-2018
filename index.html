@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="Content-type" content="text/html; charset=utf-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>A Year in Pixels - 2018</title>
+        <link rel="stylesheet" type="text/css" href="./index.css">
+   </head>
+    <body>
+        <h1 class="title">A Year in Pixels</h1>
+        <div class="calendar">
+            <ul class="months">
+                <li class="month">j</li>
+                <li class="month">f</li>
+                <li class="month">m</li>
+                <li class="month">a</li>
+                <li class="month">m</li>
+                <li class="month">j</li>
+                <li class="month">j</li>
+                <li class="month">a</li>
+                <li class="month">s</li>
+                <li class="month">o</li>
+                <li class="month">n</li>
+                <li class="month">d</li>
+            </ul>
+            <ul class="days">
+                <li class="day">1</li>
+                <li class="day">2</li>
+                <li class="day">3</li>
+                <li class="day">4</li>
+                <li class="day">5</li>
+                <li class="day">6</li>
+                <li class="day">7</li>
+                <li class="day">8</li>
+                <li class="day">9</li>
+                <li class="day">10</li>
+                <li class="day">11</li>
+                <li class="day">12</li>
+                <li class="day">13</li>
+                <li class="day">14</li>
+                <li class="day">15</li>
+                <li class="day">16</li>
+                <li class="day">17</li>
+                <li class="day">18</li>
+                <li class="day">19</li>
+                <li class="day">20</li>
+                <li class="day">21</li>
+                <li class="day">22</li>
+                <li class="day">23</li>
+                <li class="day">24</li>
+                <li class="day">25</li>
+                <li class="day">26</li>
+                <li class="day">27</li>
+                <li class="day">28</li>
+                <li class="day">29</li>
+                <li class="day">30</li>
+                <li class="day">31</li>
+            </ul>
+            <canvas id="canvas"></canvas>
+            <p>2018</p>
+        </div>
+
+        <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
+        <script>
+            var config = {
+                apiKey: "AIzaSyCilJZUH7uJMf21ry5vD-EcaqnRjagbdeo",
+                authDomain: "a-year-in-pixels-2018.firebaseapp.com",
+                databaseURL: "https://a-year-in-pixels-2018.firebaseio.com",
+                projectId: "a-year-in-pixels-2018",
+                storageBucket: "",
+                messagingSenderId: "292772918052"
+            };
+            firebase.initializeApp(config);
+        </script>
+        <script type="text/javascript" src="./index.js"></script>
+    </body>
+</html>

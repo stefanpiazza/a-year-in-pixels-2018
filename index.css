@@ -1,0 +1,62 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+.title {
+    font-family: 'Georgia';
+    font-size: 48px;
+    font-weight: 400;
+    font-style: italic;
+    text-align: center;
+}
+
+.calendar {
+    padding: 30px;
+    position: relative;
+}
+
+.months {
+    font-size: 0;
+    left: 30px;
+    list-style: none;
+    position: absolute;
+    top: 0px;
+}
+
+.month {
+    display: inline-block;
+    font-family: 'Comic Sans MS';
+    font-size: initial;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 30px;
+}
+
+.days {
+    font-size: 0;
+    left: 0px;
+    list-style: none;
+    position: absolute;
+    top: 30px;
+}
+
+.day {
+    font-family: 'Comic Sans MS';
+    font-size: initial;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    text-transform: uppercase;
+    width: 30px;
+}
+
+#canvas {
+    background-color: #000;
+    border: 1px solid #000;
+    height: 930px;
+    width: 360px;
+}
