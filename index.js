@@ -1,3 +1,5 @@
+var IS_HIDDEN_CLS = 'is-hidden';
+
 var YEAR_KEY = {
 	1: 'january',
 	2: 'february',
@@ -42,6 +44,19 @@ var MONTHS = [
 
 YEAR = {}
 
+var form = document.querySelector('.form');
+var formEmail = form.querySelector('#email');
+var formPassword = form.querySelector('#password');
+
+form.addEventListener('submit', (e) => {
+	e.preventDefault();
+
+	var email = formEmail.value;
+	var password = formPassword.value
+
+	login(email, password);
+});
+
 var canvas = document.querySelector('#canvas');
 var ctx = canvas.getContext('2d');
 
@@ -58,23 +73,33 @@ window.addEventListener('resize', (e) => {
 });
 
 canvas.addEventListener('click', (e) => {
-	var mouse = {
-		x: e.pageX-canvas.offsetLeft,
-		y: e.pageY-canvas.offsetTop
-	}
+	var auth = firebase.auth();
+	auth.onAuthStateChanged((user) => {
+		if (user) {
+			var canvasDimensions = canvas.getBoundingClientRect();
+			var mouse = {
+				x: e.clientX-canvasDimensions.left,
+				y: e.clientY-canvasDimensions.top
+			}
 
-	canvasEls.forEach((canvasEl) => {
-		if (canvasEl.x <= mouse.x && 
-			mouse.x <= canvasEl.x + canvasEl.w &&
-			canvasEl.y <= mouse.y && 
-			mouse.y <= canvasEl.y + canvasEl.h) {
+			canvasEls.forEach((canvasEl) => {
+				if (canvasEl.x <= mouse.x && 
+					mouse.x <= canvasEl.x + canvasEl.w &&
+					canvasEl.y <= mouse.y && 
+					mouse.y <= canvasEl.y + canvasEl.h) {
 
-			// Update firebase
-			setUserYear('enJh4jiIRGNTOVnYHEDHfv9GxFk1', canvasEl.month, canvasEl.day);
+					// Update firebase
+					setUserYear(user.uid, canvasEl.month, canvasEl.day);
 
-			// Update local
-			YEAR[canvasEl.month][canvasEl.day] = ((YEAR[canvasEl.month][canvasEl.day] + 1) % 7);
-			canvasEl.fillStyle = COLOUR_KEY[YEAR[canvasEl.month][canvasEl.day]];
+					// Update local
+					YEAR[canvasEl.month][canvasEl.day] = ((YEAR[canvasEl.month][canvasEl.day] + 1) % 7);
+					canvasEl.fillStyle = COLOUR_KEY[YEAR[canvasEl.month][canvasEl.day]];
+				}
+			});
+		} 
+
+		else {
+		// User is signed out.
 		}
 	});
 });
@@ -176,7 +201,6 @@ function initCanvas() {
 	}
 }
 
-
 function animateCanvas() {
 	requestAnimationFrame(animateCanvas);
 	ctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
@@ -186,8 +210,25 @@ function animateCanvas() {
 	}
 }
 
-function init() {
-	getUserYear('enJh4jiIRGNTOVnYHEDHfv9GxFk1');
+function login(email, password) {
+	var auth = firebase.auth();
+	auth.signInWithEmailAndPassword(email, password)
+	.then((data) => {
+		var user = data.user;
+
+		getUserYear(user.uid);
+
+		formEmail.value = '';
+		formPassword.value = '';
+		form.classList.add(IS_HIDDEN_CLS);
+
+		document.querySelector('.calendar').classList.remove(IS_HIDDEN_CLS);
+	})
+	.catch((error) => {
+		console.log(error);
+	})
 }
 
-init();
+function signup(email, password) {
+
+}

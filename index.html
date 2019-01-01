@@ -8,7 +8,7 @@
    </head>
     <body>
         <h1 class="title">A Year in Pixels</h1>
-        <div class="calendar">
+        <div class="calendar is-hidden">
             <ul class="months">
                 <li class="month">j</li>
                 <li class="month">f</li>
@@ -57,8 +57,22 @@
                 <li class="day">31</li>
             </ul>
             <canvas id="canvas"></canvas>
-            <p>2018</p>
+            <p class="date">2018</p>
         </div>
+
+        <form action="" method="get" class="form">
+            <div class="form__email">
+                <label for="email">Enter your email: </label>
+                <input type="text" name="email" id="email" required>
+            </div>
+            <div class="form__password">
+                <label for="password">Enter your password: </label>
+                <input type="password" name="password" id="password" required>
+            </div>
+            <div class="form__submit">
+                <input type="submit" value="Login">
+            </div>
+        </form>
 
         <script src="https://www.gstatic.com/firebasejs/5.7.2/firebase.js"></script>
         <script>

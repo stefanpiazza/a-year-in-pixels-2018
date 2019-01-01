@@ -4,6 +4,10 @@
 	padding: 0;
 }
 
+:root {
+
+}
+
 .title {
     font-family: 'Georgia';
     font-size: 48px;
@@ -13,8 +17,13 @@
 }
 
 .calendar {
+    font-size: 0;
     padding: 30px;
     position: relative;
+}
+
+.calendar.is-hidden {
+    display: none;
 }
 
 .months {
@@ -59,4 +68,23 @@
     border: 1px solid #000;
     height: 930px;
     width: 360px;
+}
+
+.date {
+    position: absolute;
+    bottom: 30px;
+    left: 400px;   
+
+    font-family: 'Georgia';
+    font-size: 24px;
+    font-weight: 400;
+    font-style: italic;
+}
+
+.form {
+
+}
+
+.form .is-hidden {
+    display: none;
 }
