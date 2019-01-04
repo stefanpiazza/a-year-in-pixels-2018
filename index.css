@@ -11,8 +11,8 @@
 .title {
     font-family: 'Georgia';
     font-size: 48px;
-    font-weight: 400;
     font-style: italic;
+    font-weight: 400;
     text-align: center;
 }
 
@@ -37,7 +37,7 @@
 .month {
     display: inline-block;
     font-family: 'Comic Sans MS';
-    font-size: initial;
+    font-size: 16px;
     height: 30px;
     line-height: 30px;
     text-align: center;
@@ -55,7 +55,7 @@
 
 .day {
     font-family: 'Comic Sans MS';
-    font-size: initial;
+    font-size: 16px;
     height: 30px;
     line-height: 30px;
     text-align: center;
@@ -70,15 +70,70 @@
     width: 360px;
 }
 
-.date {
+.key {
+    font-size: 0;
+    left: 400px;
+    list-style: none;
     position: absolute;
-    bottom: 30px;
-    left: 400px;   
+    top: 30px;
+}
 
+.key__item {
+    display: table;
+}
+
+.key__item + .key__item {
+    margin-top: 20px;
+}
+
+.key__colour {
+    border: 2px solid #000000;
+    display: table-cell;
+    height: 30px;
+    vertical-align: middle;
+    width: 30px;
+}
+
+.key__colour--orange {
+    background-color: orange;
+}
+
+.key__colour--yellow {
+    background-color: yellow;
+}
+
+.key__colour--blue {
+    background-color: blue;
+}
+
+.key__colour--green {
+    background-color: green;
+}
+
+.key__colour--cyan {
+    background-color: cyan;
+}
+
+.key__colour--red {
+    background-color: red;
+}
+
+.key__value {
+    display: table-cell;
+    font-family: 'Comic Sans MS';
+    font-size: 16px;
+    padding-left: 10px;
+    vertical-align: middle;
+}
+
+.date {
+    bottom: 30px;
     font-family: 'Georgia';
     font-size: 24px;
-    font-weight: 400;
     font-style: italic;
+    font-weight: 400;
+    left: 400px;   
+    position: absolute;
 }
 
 .form {
