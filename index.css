@@ -85,6 +85,6 @@
 
 }
 
-.form .is-hidden {
+.form.is-hidden {
     display: none;
 }
