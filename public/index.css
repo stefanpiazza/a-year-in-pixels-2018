@@ -140,6 +140,14 @@
 
 }
 
-.form.is-hidden {
+.form--login {
+
+}
+
+.form--signup {
+    
+}
+
+.forms.is-hidden {
     display: none;
 }

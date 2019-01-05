@@ -45,11 +45,13 @@
 
 	YEAR = {}
 
-	var form = document.querySelector('.form');
-	var formEmail = form.querySelector('#email');
-	var formPassword = form.querySelector('#password');
+	var forms = document.querySelector('.forms');
 
-	form.addEventListener('submit', (e) => {
+	var loginForm = document.querySelector('.form.form--login');
+	var loginFormEmail = loginForm.querySelector('#email');
+	var loginFormPassword = loginForm.querySelector('#password');
+
+	loginForm.addEventListener('submit', (e) => {
 		e.preventDefault();
 
 		var formData = new FormData(e.target);
@@ -58,6 +60,21 @@
 		var password = formData.get('password');
 
 		login(email, password);
+	});
+
+	var signupForm = document.querySelector('.form.form--signup');
+	var signupFormEmail = signupForm.querySelector('#email');
+	var signupFormPassword = signupForm.querySelector('#password');
+
+	signupForm.addEventListener('submit', (e) => {
+		e.preventDefault();
+
+		var formData = new FormData(e.target);
+
+		var email = formData.get('email');
+		var password = formData.get('password');
+
+		signup(email, password);
 	});
 
 	var canvas = document.querySelector('#canvas');
@@ -221,9 +238,10 @@
 
 			getUserYear(user.uid);
 
-			formEmail.value = '';
-			formPassword.value = '';
-			form.classList.add(IS_HIDDEN_CLS);
+			loginFormEmail.value = '';
+			loginFormPassword.value = '';
+			
+			forms.classList.add(IS_HIDDEN_CLS);
 
 			document.querySelector('.calendar').classList.remove(IS_HIDDEN_CLS);
 		})
