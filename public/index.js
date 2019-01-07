@@ -21,7 +21,7 @@
 		1: 'orange',
 		2: 'yellow',
 		3: 'blue',
-		4: 'green', 
+		4: 'green',
 		5: 'cyan',
 		6: 'red'
 	}
@@ -48,8 +48,8 @@
 	var forms = document.querySelector('.forms');
 
 	var loginForm = document.querySelector('.form.form--login');
-	var loginFormEmail = loginForm.querySelector('#email');
-	var loginFormPassword = loginForm.querySelector('#password');
+	var loginFormEmail = loginForm.querySelector('#emailLogin');
+	var loginFormPassword = loginForm.querySelector('#passwordLogin');
 
 	loginForm.addEventListener('submit', (e) => {
 		e.preventDefault();
@@ -63,8 +63,8 @@
 	});
 
 	var signupForm = document.querySelector('.form.form--signup');
-	var signupFormEmail = signupForm.querySelector('#email');
-	var signupFormPassword = signupForm.querySelector('#password');
+	var signupFormEmail = signupForm.querySelector('#emailSignup');
+	var signupFormPassword = signupForm.querySelector('#passwordSignup');
 
 	signupForm.addEventListener('submit', (e) => {
 		e.preventDefault();
@@ -103,9 +103,9 @@
 				}
 
 				canvasEls.forEach((canvasEl) => {
-					if (canvasEl.x <= mouse.x && 
+					if (canvasEl.x <= mouse.x &&
 						mouse.x <= canvasEl.x + canvasEl.w &&
-						canvasEl.y <= mouse.y && 
+						canvasEl.y <= mouse.y &&
 						mouse.y <= canvasEl.y + canvasEl.h) {
 
 						// Update firebase
@@ -116,7 +116,7 @@
 						canvasEl.fillStyle = COLOUR_KEY[YEAR[canvasEl.month][canvasEl.day]];
 					}
 				});
-			} 
+			}
 
 			else {
 			// User is signed out.
@@ -205,7 +205,7 @@
 			for (var j = 0; j < DAYS.length; j++) {
 				var x = i*(canvas.width/12);
 				var y = j*(canvas.width/12);
-				var w = (canvas.width/12) - 2; 
+				var w = (canvas.width/12) - 2;
 				var h = (canvas.width/12) - 2;
 
 				x += 1;
@@ -240,7 +240,7 @@
 
 			loginFormEmail.value = '';
 			loginFormPassword.value = '';
-			
+
 			forms.classList.add(IS_HIDDEN_CLS);
 
 			document.querySelector('.calendar').classList.remove(IS_HIDDEN_CLS);
