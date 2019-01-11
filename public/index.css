@@ -13,6 +13,8 @@
     font-size: 48px;
     font-style: italic;
     font-weight: 400;
+    margin: 20px 0;
+    padding: 0 20px;
     text-align: center;
 }
 
@@ -132,12 +134,22 @@
     font-size: 24px;
     font-style: italic;
     font-weight: 400;
-    left: 400px;   
+    left: 400px;
     position: absolute;
+}
+
+.forms {
+    margin: 20px auto 20px auto;
+    max-width: 360px;
+    padding: 0 20px;
 }
 
 .form {
 
+}
+
+.form + .form {
+    margin-top: 40px;
 }
 
 .form--login {
@@ -145,9 +157,86 @@
 }
 
 .form--signup {
-    
+
 }
 
 .forms.is-hidden {
     display: none;
+}
+
+.form__email {
+    display: flex;
+    font-size: 0;
+}
+
+.form__email label {
+    display: inline-block;
+    font-family: 'Comic Sans MS';
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.form__email input {
+    appearance: none;
+    background-color: transparent;
+    border-bottom: 1px solid #000;
+    border: none;
+    display: inline-block;
+    flex: 1 0 auto;
+    font-family: sans-serif;
+    font-size: 12px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.form__email input:focus {
+    outline: none;
+}
+
+.form__password {
+    display: flex;
+    font-size: 0;
+    margin-top: 10px;
+}
+
+.form__password label {
+    display: inline-block;
+    font-family: 'Comic Sans MS';
+    font-size: 16px;
+    line-height: 30px;
+}
+
+.form__password input {
+    appearance: none;
+    background-color: transparent;
+    border-bottom: 1px solid #000;
+    border: none;
+    display: inline-block;
+    flex: 1 0 auto;
+    font-family: sans-serif;
+    font-size: 12px;
+    height: 30px;
+    margin-left: 20px;
+}
+
+.form__password input:focus {
+    outline: none;
+}
+
+.form__submit {
+    margin-top: 20px;
+    text-align: right;
+}
+
+.form__submit input {
+    appearance: none;
+    background-color: transparent;
+    border: 1px solid #000;
+    font-family: 'Comic Sans MS';
+    font-size: 16px;
+    padding: 10px 20px;
+}
+
+.form__submit input:focus {
+    outline: none;
 }
